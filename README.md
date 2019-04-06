@@ -5,7 +5,7 @@
 This repo is meant to provide an overview of basics for practical implementation of deep learning techniques in biological image analysis challenges.
 
 
-# **CNN-UNet Myelin Quantification usage notes**
+# ** Usage notes**
 
 
 ## Installation:
@@ -92,30 +92,9 @@ This repo is meant to provide an overview of basics for practical implementation
            
            python3 main_UNet.py
   
-  2. Then navigate the GUI
-   *  First thing that appears prompts you to enter some parameters for the analysis:
-       1. Scale = scale of image in um/px
-       2. min Length = minimum length threshold for sheaths (default 12 um)
-       3. Senstivity = length factor for cells that are single or doubly ensheathed (2 == lowest, 4 == highest sensitivity)
-   *	Then navigate to and select the directory you wish to save the output
-   *	Then navigate to and select the directory that contains the ".tiff" images to be analyzed
 
   ### 3. Understanding the output/results:
   Under the directory you selected to save all files, you should find:
-  * all_fibers_image_name-of-file.pkl   --- contains sheaths identified in original matrix form
-  * all_fibers_image_name-of-file.png   --- sheaths identified with cell labels as PNG
-  * candidates0_name-of-file.tif        --- candidates selected for analysis
-  * final_image_name-of-file.tif        --- sheaths overlaid ontop of original input image
-  * masked_out_dil_name-of-file.csv     --- Output data corresponding to EACH INDIVIDUAL input image
-    * Within this file, the rows, from top to bottom, correspond to:
-       1. lengths of individual sheaths (in pixels, each excel array is a single sheath)
-       2. number of ensheathed cells identified
-       3. number of sheaths per cell (each excel array is a single cell)
-       4. mean sheath length per cell (each excel array is a single cell)
-       5. number of candidate cells analyzed
-       6. number of total cell nuclei identified
-  
-  * A folder named "combined_CSVs" which contains: the raw data from EACH INDIVIDUAL input image is then combined in the files "Result_masked_out....csv". There should be 4 combined files, each corresponding to a specific parameter from the raw data (cells, lengths, mSLC, num_sheaths). Within each of these excel sheets, each row contains the raw data from the original INDIVIDUAL input image .csvs.
   
   For examples of these files, check under "Results/Demo-data-output/"
     
